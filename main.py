@@ -7,11 +7,11 @@ import os
 import random
 
 today = datetime.now()
-# start_date = os.environ['START_DATE']
-start_date='2021-12-23'
+start_date = os.environ['START_DATE']
+# start_date='2022-02-02'  # 可将上面的start_date进行注释，将本行的注释取消，填入相对应的日期即可。
 city = os.environ['CITY']
-# birthday = os.environ['BIRTHDAY']
-birthday='3-17'
+birthday = os.environ['BIRTHDAY']
+# birthday='01-01'  # 可将上面的birthday进行注释，将本行的注释取消，填入相对应的日期即可。
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 
