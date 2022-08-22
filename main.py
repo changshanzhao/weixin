@@ -25,12 +25,10 @@ def get_weather():
   return weather['weather'], math.floor(weather['temp'])
 
 def get_count():
-  print(start_date)
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
 
 def get_birthday():
-  print(birthday)
   next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
