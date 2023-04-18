@@ -19,12 +19,8 @@ user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
 def get_weather():
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
-    }
     url = "http://www.weather.com.cn/data/cityinfo/101060101.html"
-    r = requests.get(url,headers=headers)
-    r.encoding="utf-8"
+    r = requests.get(url)
     res=r.json()
     weather = res['weatherinfo']
     return weather['weather'], weather['temp1'], weather['temp2']
