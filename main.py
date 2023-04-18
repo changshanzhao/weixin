@@ -49,7 +49,7 @@ client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'}
-url = "http://www.weather.com.cn/data/cityinfo/101060101.html"
+url = 'http://www.weather.com.cn/data/cityinfo/101060101.html'
 r = requests.get(url,headers=headers,data={})
 r.encoding='utf-8'
 print("开始")
