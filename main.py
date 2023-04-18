@@ -48,8 +48,9 @@ def get_random_color():
 client = WeChatClient(app_id, app_secret)
 
 wm = WeChatMessage(client)
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36 Edg/87.0.664.47'}
 url = "http://www.weather.com.cn/data/cityinfo/101060101.html"
-r = requests.get(url)
+r = requests.get(url,headers=headers)
 print("开始")
 print(r)
 print('结束')
