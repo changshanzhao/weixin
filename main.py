@@ -18,14 +18,16 @@ app_secret = os.environ["APP_SECRET"]
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 
-
 def get_weather():
-  url = 'http://www.weather.com.cn/data/cityinfo/101060101.html'
-  r = requests.get(url)
-  r.encoding='utf-8'
-  res=r.json()
-  weather = res['weatherinfo']
-  return weather['weather'], weather['temp1'], weather['temp2']
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36'
+    }
+    url = "http://www.weather.com.cn/data/cityinfo/101060101.html"
+    r = requests.get(url,headers=headers)
+    r.encoding="utf-8"
+    res=r.json()
+    weather = res['weatherinfo']
+    return weather['weather'], weather['temp1'], weather['temp2']
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
