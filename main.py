@@ -20,9 +20,9 @@ template_id = os.environ["TEMPLATE_ID"]
 
 
 def get_weather():
-  url = "http://www.weather.com.cn/data/cityinfo/101060101.html"
+  url = 'http://www.weather.com.cn/data/cityinfo/101060101.html'
   r = requests.get(url)
-  r.encoding="utf-8"
+  r.encoding='utf-8'
   res=r.json()
   weather = res['weatherinfo']
   return weather['weather'], weather['temp1'], weather['temp2']
