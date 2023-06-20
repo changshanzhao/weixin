@@ -20,7 +20,7 @@ template_id = os.environ["TEMPLATE_ID"]
 
 def get_weather():
     url = 'https://v0.yiketianqi.com/api?unescape=1&version=v62&appid=36449493&appsecret=TWylYl3Y&cityid=101060101'
-    res = requests.get(url).json()
+    res = requests.get(url)。json()
     return res['wea'],res['tem'],res['tem1'],res['tem2'],res['air_tips'],res['air_level'],res['zhishu']['chuanyi']['tips']
 
 def get_count():
@@ -28,10 +28,10 @@ def get_count():
   return delta.days
 
 def get_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+  next = datetime.strptime(str(date.今天()。year) + "-" + birthday, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
-  return (next - today).days
+  return (next - today)。days
 
 def get_words():
   words = requests.get("https://api.shadiao.pro/chp")
@@ -48,6 +48,6 @@ client = WeChatClient(app_id, app_secret)
 wm = WeChatMessage(client)
 wea, temperature,temperature1, temperature2,tips,level,tip2 = get_weather()
 data = {"weather":{"value":wea, "color":get_random_color()},"temperature":{"value":temperature},"temperature1":{"value":temperature1},"temperature2":{"value":temperature2},"level":{"value":level},"tips":{"value":tips},"tip2":{"value":tip2},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
-res = wm.send_template(user_id, template_id, data)
+# res = wm.send_template(user_id, template_id, data) 放手......
 res = wm.send_template("ok5zp6T4LmcwUUzl5DnAJaE_zYOM", template_id, data)
 print(res)
