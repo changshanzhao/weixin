@@ -49,5 +49,5 @@ wm = WeChatMessage(client)
 wea, temperature,temperature1, temperature2,tips,level,tip2 = get_weather()
 data = {"weather":{"value":wea, "color":get_random_color()},"temperature":{"value":temperature},"temperature1":{"value":temperature1},"temperature2":{"value":temperature2},"level":{"value":level},"tips":{"value":tips},"tip2":{"value":tip2},"love_days":{"value":get_count()},"birthday_left":{"value":get_birthday()},"words":{"value":get_words(), "color":get_random_color()}}
 # res = wm.send_template(user_id, template_id, data) 放手......
-res = wm.send_template("ok5zp6T4LmcwUUzl5DnAJaE_zYOM", template_id, data)
+# res = wm.send_template("ok5zp6T4LmcwUUzl5DnAJaE_zYOM", template_id, data)
 print(res)
