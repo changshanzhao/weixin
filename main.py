@@ -20,7 +20,8 @@ template_id = os.environ["TEMPLATE_ID"]
 
 def get_weather():
     url = 'https://v0.yiketianqi.com/api?unescape=1&version=v62&appid=36449493&appsecret=TWylYl3Y&cityid=101060101'
-    res = requests.get(url)。json()
+    res = requests.get(url)
+    res = res.json()
     return res['wea'],res['tem'],res['tem1'],res['tem2'],res['air_tips'],res['air_level'],res['zhishu']['chuanyi']['tips']
 
 def get_count():
