@@ -29,7 +29,7 @@ def get_count():
   return delta.days
 
 def get_birthday():
-  t = date.今天()
+  t = date.today()
   next = datetime.strptime(str(t.year) + "-" + birthday, "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
